@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Felhasználó</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/print-etterem.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="../imgs/favicon.png">
+    <script type="module" src="main.js"></script>
+
+
+</head>
+<body>
+<header>
+    <div class="head-image">
+        <div class="food-icon-container">
+            <img src="../imgs/food.svg" alt="kocsi" class="food-icon">
+        </div>
+        <div class="food-icon-container">
+            <img src="../imgs/food.svg" alt="kocsi" class="food-icon">
+        </div>
+        <div class="food-icon-container">
+            <img src="../imgs/food.svg" alt="kocsi" class="food-icon">
+        </div>
+    </div>
+</header>
+<nav>
+    <input type="checkbox" id="toggle-menu">
+    <label for="toggle-menu" id="hamburger"></label>
+    <ul id="navigation">
+        <li><a href="../index.html" >Kezdőoldal</a></li>
+        <li><a href="restaurants.html">Éttermek</a></li>
+        <li><a href="foods.html">Ételek</a></li>
+        <li><a href="coupons.html">Kedvezmények</a></li>
+        <li><a href="user.html" class="aktual">Felhasználó</a></li>
+    </ul>
+
+</nav>
+
+<main class="user-main">
+    <table>
+        <caption>Felhasználói adatok</caption>
+        <tr>
+            <th>Felhasználónév:</th>
+            <td>pityukakas</td>
+        </tr>
+        <tr>
+            <th>E-mail:</th>
+            <td>pityukakas@szepvolt.nt</td>
+        </tr>
+        <tr>
+            <th>Utolsó belépés:</th>
+            <td>2023.03.14.</td>
+        </tr>
+    </table>
+    <form action="#" method="post">
+        <label for="username">Új felhasználónév</label>
+        <input type="text" id="username" name="username" maxlength="20" placeholder="azennevemez">
+        <label for="email">Új e-mail cím</label>
+        <input type="email" id="email" name="email" placeholder="ujrajovolt@hello.nt"><br>
+
+        <input type="submit" name="change-submit" id="change-submit" value="Beküldés">
+    </form>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Új étterem felvétele</legend>
+            <label for="res-name">Étterem neve</label>
+            <input type="text" name="res-name" id="res-name" placeholder="Kis Béla Konyhája">
+            <label for="res-address">Étterem címe</label>
+            <input type="text" name="res-address" id="res-address" placeholder="Pacal utca 15">
+            <label for="res-website">Weboldal</label>
+            <input type="url" id="res-website" name="res-website" placeholder="https://www.ezegykamuetterem.hu">
+            <label for="res-picture">Étterem logója/képe</label>
+            <input type="file" name="res-picture" id="res-picture">
+        </fieldset>
+        <fieldset>
+            <legend>Új étel felvétele</legend>
+            <label for="restaurant">Étterem</label>
+            <select id="restaurant" name="restaurant">
+                <option value="1">Nagy Békavár</option>
+                <option value="2">Kis Békavár</option>
+                <option value="3">Közepes Békavár</option>
+            </select>
+            <label for="food-name">Étel megnevezése</label>
+            <input type="text" id="food-name" name="food-name" maxlength="50" placeholder="Finom hurka">
+            <label for="food-price">Étel ára</label>
+            <input type="number" id="food-price" name="food-price" placeholder="1000000">
+            <label for="food-desc">Étel leírása</label>
+            <textarea name="food-desc" id="food-desc" cols="30" rows="10" placeholder="Sok benne a rizs..."></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Új kedvezmény</legend>
+            <label for="res-coupon">Étterem</label>
+            <select id="res-coupon" name="res-coupon">
+                <option value="1">Nagy Békavár</option>
+                <option value="2">Kis Békavár</option>
+                <option value="3">Közepes Békavár</option>
+            </select>
+            <label for="coupon-value">Kedvezmény mértéke</label>
+            <input type="number" id="coupon-value" name="coupon-value" placeholder="1000">
+            <input type="radio" id="coupon-percentage" name="coupon-percentage" value="%" checked>
+            <label for="coupon-percentage">%</label>
+            <input type="radio" id="coupon-ft" name="coupon-percentage" value="ft" >
+            <label for="coupon-ft">Ft</label>
+            <label for="coupon-group">Kinek szól</label>
+            <select name="coupon-goup" id="coupon-group">
+                <option value="all">Mindenkinek</option>
+                <option value="student">Diákoknak</option>
+                <option value="old">Időseknek</option>
+                <option value="else">Egyéb</option>
+            </select>
+        </fieldset>
+        <input type="submit" id="submit-new-items" name="submit-new-items" value="Beküldés">
+        <input type="reset" id="reset-all-items" name="reset-all-items" value="Törlés">
+    </form>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+.user-main{
+    background-color: rgba(255,255,255,.3);
+    border-radius: 20px;
+    padding: 10px;
+    width: 70vw;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+}
+
+*:not(.head-image){
+    border-radius: 20px;
+}
+
+.user-main caption{
+    font-weight: bold;
+}
+
+.user-main table{
+    border-spacing: 10px;
+    border-radius: 20px;
+}
+.user-main td, .user-main th{
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.user-main th{
+    text-align: left;
+}
+
+.user-main td{
+    text-align: center;
+}
+
+form{
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.user-main td, .user-main th{
+    padding: 15px;
+}
+
+form:nth-of-type(2){
+    grid-column: span 2;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]::file-selector-button:hover{
+    background-color: rgba(50,205,50,.3);
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus
+,input[type="number"]:focus, textarea:focus, select:focus{
+    background-color: rgba(50,205,50,.5);
+    border: 1px rgba(50,205,50,1) solid;
+}
+
+input[type="text"], input[type="email"], input[type="url"]
+,input[type="number"], textarea, input[type="file"] {
+    padding:5px 10px;
+    width:100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+label:not(label[for="coupon-percentage"], label[for="coupon-ft"]){
+    font-weight: bold;
+    margin: 5px;
+    display: block;
+}
+
+option, select{
+    padding: 5px 10px;
+}
+
+input[type="submit"], input[type="reset"], input[type="file"]::file-selector-button{
+    padding: 10px;
+    font-weight: 700;
+    background-color: #32CD32;
+    cursor: pointer;
+    margin: 5px auto;
+}
+
+fieldset{
+    width: 70%;
+    margin: 5px auto;
+}
+
+input[type="file"]{
+    align-self: center;
+    width: fit-content;
+}
+
+input[type="file"]::file-selector-button{
+    border-radius: 20px;
+    margin: 5px 10px;
+}

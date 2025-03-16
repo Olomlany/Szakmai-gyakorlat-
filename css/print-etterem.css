@@ -1,0 +1,54 @@
+@media print {
+    header, nav, .comments, .etterem-main img , .coupons-main img, a, .food-main img, aside, .content img, .content a{
+        display: none;
+    }
+    .etterem-main, .coupons-main, .food-main, .food, .grid-container, article.content{
+        grid-template-columns: 1fr;
+    }
+    .food p {
+        grid-column: 1 / 1;
+    }
+    .food{
+        page-break-inside: avoid;
+    }
+    article.content h3{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    article.content p:last-of-type{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        padding: 20px;
+    }
+    article.content{
+        page-break-inside: avoid;
+    }
+    .coupons{
+        page-break-inside: avoid;
+    }
+    article.content img, article.content a{
+        display: none;
+    }
+
+    .user-main form{
+        display: none;
+    }
+    .user-main{
+        border-radius: 0;
+        font-family: Arial;
+    }
+    .user-main table, .user-main td, .user-main th{
+        border: 1px solid black;
+    }
+    .user-main table{
+        border-collapse: collapse;
+    }
+
+    .index-main form{
+        display: none;
+    }
+}
+
+@page{
+    margin: 2cm 2.5cm;
+}

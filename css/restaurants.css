@@ -1,0 +1,98 @@
+.content img{
+    display: block;
+    width:100%;
+    max-width: 200px;
+    margin: auto;
+    padding-top: 10px;
+
+}
+
+.content{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 2fr;
+    text-align: center;
+    justify-content: center;
+    margin: 5px 10px;
+    border: 1px black solid;
+    border-radius: 20px;
+}
+
+.content img{
+    border-radius: 100%;
+    animation: change-size .5s ease-in-out;
+}
+
+.content p:first-of-type {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    text-align: justify;
+    padding: 0 10px;
+    display:block;
+    margin: auto;
+    font-size: 1.05em;
+    line-height: 1.2;
+}
+
+
+
+.content a:last-of-type:active{
+    background-color: rgba(50,205,50,.5);
+}
+
+.content a{
+    font-weight: bold;
+    display: block;
+    height: fit-content;
+    background-color: rgba(255,255,255,0);
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 1em 1em;
+    border-radius: 20px;
+}
+
+.content a:hover{
+    background-color: rgba(255,255,255,.7);
+}
+
+.menu-list{
+    display: grid;
+    grid-gap: 5px;
+}
+
+.restaurant{
+    display: block;
+    border: 1px black solid;
+    border-radius: 20px;
+    width: 90%;
+    margin: 0 auto;
+    transition: transform .2s;
+}
+
+.restaurant:hover{
+    z-index: 100;
+    transform: scale(1.05);
+}
+
+.menu li{
+    margin: 5px 0;
+}
+
+aside{
+    text-align: center;
+}
+
+.grid-container{
+    margin: 10px auto;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 1em;
+}
+
+.grid-element{
+    width: auto;
+    background-color: rgba(255,255,255,.3);
+    border-radius: 20px;
+}

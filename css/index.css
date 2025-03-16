@@ -1,0 +1,83 @@
+.index-main{
+    background-color: rgba(255,255,255,.3);
+    border-radius: 20px;
+    padding: 10px;
+    width: 70vw;
+}
+
+*{
+    border-radius: 20px;
+}
+
+form{
+    display: block;
+    /*border: 1px black solid;*/
+    border-radius: 20px;
+    width: 70%;
+    margin: 10px auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+input[type="text"], input[type="password"],input[type="email"]  {
+    width: 100%;
+    padding: 10px 15px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+input[type="submit"], input[type="reset"], input[type="file"]::file-selector-button{
+    padding: 10px;
+    font-weight: 700;
+    background-color: #32CD32;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]::file-selector-button:hover{
+    background-color: rgba(50,205,50,.3);
+}
+
+
+input[type="file"] {
+    padding:5px 10px;
+    width:100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+label{
+    width: 100%;
+    display: block;
+    margin: 5px;
+}
+
+input[type="file"]{
+    align-self: center;
+    width: fit-content;
+    margin: 5px auto;
+    text-align: center;
+}
+
+input[type="file"]::file-selector-button{
+    border-radius: 20px;
+    margin: 5px 10px;
+}
+
+
+
+legend{
+    background-color: rgba(255,255,255,.1);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+fieldset{
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+input{
+    margin: 15px 0;
+}
