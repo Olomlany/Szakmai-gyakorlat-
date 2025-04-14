@@ -73,3 +73,69 @@ caption{
     margin: 0;
 }
 
+body {
+    background-color: #f0f0f0;
+    font-family: cursive;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+}
+
+.etterem-main {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 90%;
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.etterem-main img {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.etterem-main table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    font-size: 1em;
+}
+
+.etterem-main table, th, td {
+    border: 1px solid black;
+}
+
+.etterem-main th, td {
+    padding: 10px;
+}
+
+.etterem-main caption {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    margin-top: 40px;
+    font-size: 1em;
+}
+.arjegyzek {
+    margin: 30px auto;
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+}
+
+.arjegyzek caption {
+    caption-side: top;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.arjegyzek th, .arjegyzek td {
+    border: 1px solid black;
+    padding: 10px;
+}

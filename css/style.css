@@ -29,7 +29,7 @@ header{
 
 .head-image {
     height: 25vh;
-    width: 100vw;
+    width: 100%;
     background-image: url("../imgs/food-bg2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -64,62 +64,7 @@ header{
     box-sizing: border-box;
 }
 
-nav{
-    width:fit-content;
-    height: fit-content;
-    margin: 10px auto;
-    background-color: rgba(255,255,255,.3);
-    border-radius: 20px;
-    position: sticky;
-    top: 0;
-    border: rgba(255,255,255,.3) 1px solid;
-    display: flex;
-    flex-flow: row;
-}
 
-#navigation{
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    width: fit-content;
-    height: fit-content;
-}
-
-#navigation li{
-    margin: 0 5px;
-}
-
-a{
-    text-decoration: none;
-    color:black;
-    text-align: center;
-}
-
-nav a{
-    width: 20%;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: 700;
-    position: relative;
-}
-nav a:after{
-    content: "";
-    position: absolute;
-    background-color: black;
-    height: 1px;
-    width: 0;
-    left:10%;
-    bottom: 5px;
-    overflow: hidden;
-}
-nav a:hover{
-    background-color: #32CD32;
-}
-
-nav a:hover:after{
-    animation: underline 250ms ease-in-out;
-    width:80%;
-}
 
 main{
     margin: 10px auto;
@@ -298,4 +243,40 @@ button.btn-primary:hover {
     .contact-main {
         width: 90%;
     }
+}
+
+
+.user-main table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.accordion .accordion-item {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.accordion-button {
+    border-radius: 0 !important;
+}
+
+.accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.accordion-button:not(.collapsed) {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }

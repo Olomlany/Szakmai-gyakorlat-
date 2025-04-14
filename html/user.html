@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,6 @@
     <link rel="icon" type="image/x-icon" href="../imgs/favicon.png">
     <script type="module" src="main.js"></script>
 
-
 </head>
 <body>
 <header>
@@ -30,43 +30,71 @@
         </div>
     </div>
 </header>
-<nav>
-    <input type="checkbox" id="toggle-menu">
-    <label for="toggle-menu" id="hamburger"></label>
-    <ul id="navigation">
-        <li><a href="../index.html" >Kezdőoldal</a></li>
-        <li><a href="restaurants.html">Éttermek</a></li>
-        <li><a href="foods.html">Ételek</a></li>
-        <li><a href="coupons.html">Kedvezmények</a></li>
-        <li><a href="user.html" class="aktual">Felhasználó</a></li>
-    </ul>
 
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Kezdőoldal</a></li>
+                <li class="nav-item"><a class="nav-link" href="restaurants.html">Éttermek</a></li>
+                <li class="nav-item"><a class="nav-link" href="foods.html">Ételek</a></li>
+                <li class="nav-item"><a class="nav-link" href="coupons.html">Kedvezmények</a></li>
+                <li class="nav-item"><a class="nav-link active text-white bg-success rounded px-3" href="user.html">Felhasználó</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
+
+
 <main class="user-main">
-    <table>
-        <caption>Felhasználói adatok</caption>
+    <table class="table table-bordered table-striped my-4">
+        <caption class="caption-top">Felhasználói adatok</caption>
         <tr>
-            <th>Felhasználónév:</th>
+            <th scope="row">Felhasználónév:</th>
             <td>pityukakas</td>
         </tr>
         <tr>
-            <th>E-mail:</th>
+            <th scope="row">E-mail:</th>
             <td>pityukakas@szepvolt.nt</td>
         </tr>
         <tr>
-            <th>Utolsó belépés:</th>
+            <th scope="row">Utolsó belépés:</th>
             <td>2023.03.14.</td>
         </tr>
     </table>
-    <form action="#" method="post">
-        <label for="username">Új felhasználónév</label>
-        <input type="text" id="username" name="username" maxlength="20" placeholder="azennevemez">
-        <label for="email">Új e-mail cím</label>
-        <input type="email" id="email" name="email" placeholder="ujrajovolt@hello.nt"><br>
 
-        <input type="submit" name="change-submit" id="change-submit" value="Beküldés">
-    </form>
+    <!-- Bootstrap styled form START -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Kapcsolati adatok frissítése</h2>
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Új felhasználónév</label>
+                                <input type="text" class="form-control" id="username" name="username" maxlength="20" placeholder="azennevemez">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Új e-mail cím</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="ujrajovolt@hello.nt">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success">Beküldés</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <form action="#" method="post">
         <fieldset>
@@ -121,6 +149,8 @@
         <input type="reset" id="reset-all-items" name="reset-all-items" value="Törlés">
     </form>
 </main>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
