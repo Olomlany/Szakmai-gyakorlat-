@@ -32,20 +32,19 @@
 </header>
 
 
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container-fluid">
+        <a class="navbar-brand d-lg-none" href="#">Menü</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Kezdőoldal</a></li>
-                <li class="nav-item"><a class="nav-link" href="restaurants.html">Éttermek</a></li>
-                <li class="nav-item"><a class="nav-link" href="foods.html">Ételek</a></li>
-                <li class="nav-item"><a class="nav-link" href="coupons.html">Kedvezmények</a></li>
-                <li class="nav-item"><a class="nav-link active text-white bg-success rounded px-3" href="user.html">Felhasználó</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html">Kezdőoldal</a></li><li class="nav-item"><a class="nav-link" href="restaurants.html">Éttermek</a></li><li class="nav-item"><a class="nav-link" href="foods.html">Ételek</a></li><li class="nav-item"><a class="nav-link" href="coupons.html">Kedvezmények</a></li><li class="nav-item"><a class="nav-link active text-white bg-success rounded px-3" href="user.html">Felhasználó</a></li>
             </ul>
         </div>
     </div>
@@ -53,24 +52,10 @@
 
 
 
-<main class="user-main">
-    <table class="table table-bordered table-striped my-4">
-        <caption class="caption-top">Felhasználói adatok</caption>
-        <tr>
-            <th scope="row">Felhasználónév:</th>
-            <td>pityukakas</td>
-        </tr>
-        <tr>
-            <th scope="row">E-mail:</th>
-            <td>pityukakas@szepvolt.nt</td>
-        </tr>
-        <tr>
-            <th scope="row">Utolsó belépés:</th>
-            <td>2023.03.14.</td>
-        </tr>
-    </table>
 
-    <!-- Bootstrap styled form START -->
+<main class="user-main">
+
+
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
@@ -148,9 +133,62 @@
         <input type="submit" id="submit-new-items" name="submit-new-items" value="Beküldés">
         <input type="reset" id="reset-all-items" name="reset-all-items" value="Törlés">
     </form>
+    <section class="container my-5">
+        <h2 class="mb-4">Kapcsolatfelvétel</h2>
+        <form id="ajax-contact-form">
+            <div class="mb-3">
+                <label for="contact-name" class="form-label">Név</label>
+                <input type="text" class="form-control" id="contact-name" required>
+            </div>
+            <div class="mb-3">
+                <label for="contact-email" class="form-label">Email cím</label>
+                <input type="email" class="form-control" id="contact-email" required>
+            </div>
+            <div class="mb-3">
+                <label for="contact-message" class="form-label">Üzenet</label>
+                <textarea class="form-control" id="contact-message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Küldés
+                <i id="spinner" class="fas fa-spinner fa-spin ms-2 d-none"></i>
+            </button>
+        </form>
+    </section>
+
+
 </main>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<script>
+    $(document).ready(function() {
+        $('#ajax-contact-form').submit(function(e) {
+            e.preventDefault();
+            $('#spinner').removeClass('d-none');
+
+            const data = {
+                name: $('#contact-name').val(),
+                email: $('#contact-email').val(),
+                message: $('#contact-message').val()
+            };
+
+            $.ajax({
+                url: 'https://example.com/api/contact', // nem létező random végpont
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                complete: function() {
+                    $('#spinner').addClass('d-none');
+                    alert('A kérés elküldve. Nézd meg a Network fület!');
+                }
+            });
+        });
+    });
+</script>
+
+
 </body>
 </html>
