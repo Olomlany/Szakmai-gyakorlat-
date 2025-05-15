@@ -87,15 +87,17 @@
                             <p class="card-text">${product.description}</p>
                             <p class="fw-bold">Ár: ${product.price} $</p>
                             <p>Értékelés: <span class="text-warning">${stars}</span></p>
-                            <button class="btn btn-outline-primary mt-auto" data-bs-toggle="collapse" data-bs-target="#comments-${product.id}">
-                                Hozzászólások
-                            </button>
+                    <button class="btn btn-outline-primary mt-auto" data-bs-toggle="collapse" data-bs-target="#comments-${product.id}">
+                     Hozzászólások
+                    </button>
+                <div id="comments-${product.id}" class="collapse mt-3">
+                        <ul class="list-group comment-list" data-loaded="false" data-product-id="${product.id}">
+                             <li class="list-group-item">Hozzászólások betöltése...</li>
+                         </ul>
+                </div>
+
                             <div id="comments-${product.id}" class="collapse mt-3">
-                                <div class="mb-2">
-                                    <input type="text" class="form-control mb-1" placeholder="Név">
-                                    <textarea class="form-control mb-2" rows="2" placeholder="Üzenet"></textarea>
-                                    <button class="btn btn-sm btn-success add-comment">Küldés</button>
-                                </div>
+
                                 <ul class="list-group comment-list"></ul>
                             </div>
                         </div>
@@ -116,6 +118,29 @@
             });
 
             setupPagination(foodProducts.length);
+
+            $('#product-list').on('show.bs.collapse', '.collapse', function () {
+                const commentList = $(this).find('.comment-list');
+                const productId = commentList.data('product-id');
+
+                if (commentList.data('loaded') === true) return;
+
+                $.get(`https://dummyjson.com/comments`, function(data) {
+                    const comments = data.comments.filter(c => c.postId === productId);
+                    commentList.empty();
+
+                    if (comments.length === 0) {
+                        commentList.append("<li class='list-group-item'>Nincsenek hozzászólások.</li>");
+                    } else {
+                        comments.forEach(c => {
+                            commentList.append(`<li class='list-group-item'><strong>${c.user.username}:</strong> ${c.body}</li>`);
+                        });
+                    }
+
+                    commentList.data('loaded', true);
+                });
+            });
+
         });
     }
 
